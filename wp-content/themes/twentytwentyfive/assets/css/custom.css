@@ -67,29 +67,121 @@
     margin-bottom: var(--spacing-sm);
 }
 
-/* Products Section */
-.products-section {
-    background-color: var(--light-bg);
-    padding: var(--spacing-lg) var(--spacing-md);
-}
-
 /* Guide Section */
 .guide-section {
     padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--light-bg);
+}
+
+.guide-section h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.guide-section h2:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 1rem auto;
 }
 
 .guide-card {
     background: var(--white);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: 100%;
 }
 
 .guide-card h3 {
     color: var(--primary-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
     margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guide-list li {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.guide-list li:hover {
+    background-color: var(--light-bg);
+}
+
+.guide-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.guide-content strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.guide-content p {
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.guide-cta {
+    margin-top: var(--spacing-lg);
+}
+
+.guide-cta .wp-block-button__link {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.guide-cta .wp-block-button__link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .guide-section h2 {
+        font-size: 2rem;
+    }
+
+    .guide-card {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .guide-list li {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .guide-icon {
+        margin-bottom: var(--spacing-sm);
+    }
 }
 
 /* Responsive Design */
@@ -115,4 +207,188 @@
 
 .hero-section, .feature-card, .guide-card {
     animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    padding: var(--spacing-sm) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.main-navigation {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-navigation a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.footer-widgets {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: var(--spacing-lg);
+}
+
+.footer-widgets h4 {
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+}
+
+.footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-navigation a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-navigation a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.copyright {
+    color: var(--white);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .main-navigation {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .footer-widgets {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Info Section Styles */
+.info-section {
+    background-color: var(--white);
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.info-section h2 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.info-grid {
+    margin-bottom: var(--spacing-lg);
+}
+
+.info-card {
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.info-content h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.info-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Banner Section */
+.banner-section {
+    margin-top: var(--spacing-lg);
+    width: 80%;
+    max-width: 1200px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.banner-section:hover .banner-image {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .banner-section {
+        width: 95%;
+        margin-top: var(--spacing-md);
+    }
 } 
